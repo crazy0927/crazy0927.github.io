@@ -15,6 +15,14 @@
 </head>
 
 <body>
+    <!-- 語言切換選單 -->
+    <nav class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('zh')">繁中</button>
+        <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+        <button class="lang-btn" onclick="switchLang('ru')">Русский</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+    </nav>
+
     <!-- 開頭動畫 (Loader) -->
     <div id="loader">
         <img src="intro.png" alt="Starting AI System...">
@@ -29,15 +37,16 @@
         <!-- Hero Section -->
         <section class="hero visible" id="home">
             <div class="hero-content">
-                <h1>
-                    Hi, 我是 crazy0927
-                    <span class="lang-text">こんにちは、私は crazy0927 です</span>
-                    <span class="lang-text">Привет, я crazy0927</span>
-                    <span class="lang-text">Hello, I'm crazy0927</span>
+                <h1 id="hero-title">
+                    <span class="lang-text zh active">Hi, 我是 crazy0927</span>
+                    <span class="lang-text ja">こんにちは、私は crazy0927 です</span>
+                    <span class="lang-text ru">Привет, я crazy0927</span>
+                    <span class="lang-text en">Hello, I'm crazy0927</span>
                 </h1>
                 <p>AI 探索者 & 網頁開發愛好者 / AI Student</p>
                 <div class="cta-group">
-                    <a href="https://github.com/crazy0927" target="_blank" class="btn btn-primary">GitHub Profile</a>
+                    <a href="https://github.com/crazy0927" target="_blank" class="btn btn-primary"
+                        id="cta-github">GitHub Profile</a>
                 </div>
             </div>
             <div class="hero-img">
@@ -48,19 +57,36 @@
 
         <!-- About Section -->
         <section id="about" class="glass-card">
-            <h2>自己紹介 / About Me</h2>
+            <h2 id="about-title">
+                <span data-lang-content="zh" class="active">關於我</span>
+                <span data-lang-content="ja">自己紹介</span>
+                <span data-lang-content="ru">Обо мне</span>
+                <span data-lang-content="en">About Me</span>
+            </h2>
             <div style="margin-top: 1rem; color: #cbd5e1;">
-                <p>【中文】 我是一名對人工智慧充滿熱情的學生。我致力於探索數據背後的邏輯，並將 AI 技術應用於實際場景。</p>
-                <p style="margin-top: 0.5rem;">【日本語】 私は人工知能に情熱を注いでいる学生です。データの背後にあるロジックを探索し、AI技術を実際のシナリオに応用することに専念しています。
-                </p>
-                <p style="margin-top: 0.5rem;">【Русский】 Я студент, увлеченный искусственным интеллектом. Я стремлюсь
-                    исследовать логику данных и применять технологии ИИ в реальных сценариях.</p>
-                <p style="margin-top: 0.5rem;">【English】 I am a student passionate about Artificial Intelligence. I am
-                    dedicated to exploring the logic behind data and applying AI technologies to real-world scenarios.
-                </p>
+                <div data-lang-content="zh" class="active">
+                    <p>我是一名對人工智慧充滿熱情的學生。我致力於探索數據背後的邏輯，並將 AI 技術應用於實際場景。</p>
+                </div>
+                <div data-lang-content="ja">
+                    <p>私は人工知能に情熱を注いでいる學生です。データの背後にあるロジックを探索し、AI技術を実際のシナリオに応用することに專念しています。</p>
+                </div>
+                <div data-lang-content="ru">
+                    <p>Я студент, увлеченный искусственным интеллектом. Я стремлюсь исследовать логику данных и
+                        применять технологии ИИ в реальных сценариях.</p>
+                </div>
+                <div data-lang-content="en">
+                    <p>I am a student passionate about Artificial Intelligence. I am dedicated to exploring the logic
+                        behind data and applying AI technologies to real-world scenarios.</p>
+                </div>
             </div>
+
             <div style="margin-top: 2rem;">
-                <h3>專長領域與技術棧 / Technical Skills</h3>
+                <h3>
+                    <span data-lang-content="zh" class="active">專長領域與技術棧</span>
+                    <span data-lang-content="ja">専門スキルと技術スタック</span>
+                    <span data-lang-content="ru">Профессиональные навыки</span>
+                    <span data-lang-content="en">Technical Skills</span>
+                </h3>
 
                 <div class="skill-category">
                     <h4>AI & Data Science</h4>
@@ -73,7 +99,7 @@
                 </div>
 
                 <div class="skill-category">
-                    <h4>System & Backend (Systems Engineering)</h4>
+                    <h4>System & Backend</h4>
                     <div class="skill-group">
                         <span class="skill-tag">C</span>
                         <span class="skill-tag">C++</span>
@@ -104,11 +130,23 @@
 
         <!-- Projects Section -->
         <section id="projects">
-            <h2 style="margin-bottom: 2rem; text-align: center;">精選項目 / Projects</h2>
+            <h2 style="margin-bottom: 2rem; text-align: center;">
+                <span data-lang-content="zh" class="active">精選項目</span>
+                <span data-lang-content="ja">注目のプロジェクト</span>
+                <span data-lang-content="ru">Избранные проекты</span>
+                <span data-lang-content="en">Selected Projects</span>
+            </h2>
             <div class="grid">
                 <div class="glass-card">
                     <h3>crazy0927.github.io</h3>
-                    <p style="color: #94a3b8; margin: 1rem 0;">我的個人展示網頁，展示最新的專案與開發心得。</p>
+                    <p style="color: #94a3b8; margin: 1rem 0;">
+                        <span data-lang-content="zh" class="active">我的個人展示網頁，展示最新的專案與開發心得。</span>
+                        <span data-lang-content="ja">私のポートフォリオウェブサイト。最新のプロジェクトと開発の洞察を展示しています。</span>
+                        <span data-lang-content="ru">Мой сайт-портфолио, демонстрирующий последние проекты и опыт
+                            разработки.</span>
+                        <span data-lang-content="en">My personal portfolio website, showcasing the latest projects and
+                            development insights.</span>
+                    </p>
                     <a href="https://github.com/crazy0927/crazy0927.github.io" target="_blank"
                         style="color: var(--accent); text-decoration: none; font-weight: 600;">Explore →</a>
                 </div>
@@ -124,7 +162,12 @@
         <!-- Contact Section -->
         <section id="contact" style="text-align: center;">
             <div class="glass-card" style="margin-bottom: 2rem;">
-                <h2>聯絡我 / Contact</h2>
+                <h2>
+                    <span data-lang-content="zh" class="active">聯絡我</span>
+                    <span data-lang-content="ja">お問い合わせ</span>
+                    <span data-lang-content="ru">Связаться со мной</span>
+                    <span data-lang-content="en">Contact Me</span>
+                </h2>
                 <p style="margin: 1.5rem 0; color: #94a3b8;">Let's connect and build something amazing together.</p>
                 <a href="https://github.com/crazy0927" class="btn btn-primary">Follow on GitHub</a>
             </div>
@@ -136,6 +179,31 @@
     </footer>
 
     <script>
+        // Language Switching Logic
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick').includes(`'${lang}'`)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Update title (Hero)
+            document.querySelectorAll('.lang-text').forEach(el => {
+                el.classList.remove('active');
+                if (el.classList.contains(lang)) el.classList.add('active');
+            });
+
+            // Update all data-lang-content
+            document.querySelectorAll('[data-lang-content]').forEach(el => {
+                el.classList.remove('active');
+                if (el.getAttribute('data-lang-content') === lang) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
         // Loader Fade Out
         window.addEventListener('load', () => {
             setTimeout(() => {

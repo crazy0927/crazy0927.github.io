@@ -141,12 +141,77 @@ section.visible {
 }
 
 .lang-text {
-    display: block;
+    display: none;
+    /* 預設隱藏，由 JS 控制顯示 */
     font-size: 1.2rem;
     font-weight: 400;
     color: #94a3b8;
     margin-top: 0.5rem;
     line-height: 1.2;
+}
+
+.lang-text.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Language Switcher Floating Menu */
+.lang-switcher {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    gap: 0.5rem;
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    padding: 0.5rem;
+    border-radius: 100px;
+    border: 1px solid var(--glass-border);
+}
+
+.lang-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lang-btn.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.lang-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 多語系內容容器控制 */
+[data-lang-content] {
+    display: none;
+}
+
+[data-lang-content].active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .hero-content p {

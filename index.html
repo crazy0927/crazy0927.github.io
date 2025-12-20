@@ -1,1 +1,160 @@
-hello
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crazy0927 | Portfolio</title>
+    <meta name="description" content="crazy0927 Portfolio - AI Student and Web Developer">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- 開頭動畫 (Loader) -->
+    <div id="loader">
+        <img src="intro.png" alt="Starting AI System...">
+    </div>
+
+    <div class="bg-blobs">
+        <div class="blob"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero visible" id="home">
+            <div class="hero-content">
+                <h1>
+                    Hi, 我是 crazy0927
+                    <span class="lang-text">こんにちは、私は crazy0927 です</span>
+                    <span class="lang-text">Привет, я crazy0927</span>
+                    <span class="lang-text">Hello, I'm crazy0927</span>
+                </h1>
+                <p>AI 探索者 & 網頁開發愛好者 / AI Student</p>
+                <div class="cta-group">
+                    <a href="https://github.com/crazy0927" target="_blank" class="btn btn-primary">GitHub Profile</a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <!-- 拉取 GitHub 頭像 -->
+                <img src="https://avatars.githubusercontent.com/u/10188612?v=4" alt="GitHub Avatar">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="glass-card">
+            <h2>自己紹介 / About Me</h2>
+            <div style="margin-top: 1rem; color: #cbd5e1;">
+                <p>【中文】 我是一名對人工智慧充滿熱情的學生。我致力於探索數據背後的邏輯，並將 AI 技術應用於實際場景。</p>
+                <p style="margin-top: 0.5rem;">【日本語】 私は人工知能に情熱を注いでいる学生です。データの背後にあるロジックを探索し、AI技術を実際のシナリオに応用することに専念しています。
+                </p>
+                <p style="margin-top: 0.5rem;">【Русский】 Я студент, увлеченный искусственным интеллектом. Я стремлюсь
+                    исследовать логику данных и применять технологии ИИ в реальных сценариях.</p>
+                <p style="margin-top: 0.5rem;">【English】 I am a student passionate about Artificial Intelligence. I am
+                    dedicated to exploring the logic behind data and applying AI technologies to real-world scenarios.
+                </p>
+            </div>
+            <div style="margin-top: 2rem;">
+                <h3>專長領域與技術棧 / Technical Skills</h3>
+
+                <div class="skill-category">
+                    <h4>AI & Data Science</h4>
+                    <div class="skill-group">
+                        <span class="skill-tag">Python (AI/ML)</span>
+                        <span class="skill-tag">PyTorch / TensorFlow</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">NLP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>System & Backend (Systems Engineering)</h4>
+                    <div class="skill-group">
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Assembler</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">ASP</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Database Management</h4>
+                    <div class="skill-group">
+                        <span class="skill-tag">SQLite</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Web Development</h4>
+                    <div class="skill-group">
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                        <span class="skill-tag">Modern JavaScript</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 style="margin-bottom: 2rem; text-align: center;">精選項目 / Projects</h2>
+            <div class="grid">
+                <div class="glass-card">
+                    <h3>crazy0927.github.io</h3>
+                    <p style="color: #94a3b8; margin: 1rem 0;">我的個人展示網頁，展示最新的專案與開發心得。</p>
+                    <a href="https://github.com/crazy0927/crazy0927.github.io" target="_blank"
+                        style="color: var(--accent); text-decoration: none; font-weight: 600;">Explore →</a>
+                </div>
+                <!-- 這裡可以未來手動增加更多項目 -->
+                <div class="glass-card">
+                    <h3>AI 研究專案</h3>
+                    <p style="color: #94a3b8; margin: 1rem 0;">正在進行中的 AI 相關研究與實驗，致力於優化模型效能。</p>
+                    <span style="font-size: 0.8rem; color: var(--secondary);">開發中...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" style="text-align: center;">
+            <div class="glass-card" style="margin-bottom: 2rem;">
+                <h2>聯絡我 / Contact</h2>
+                <p style="margin: 1.5rem 0; color: #94a3b8;">Let's connect and build something amazing together.</p>
+                <a href="https://github.com/crazy0927" class="btn btn-primary">Follow on GitHub</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 4rem 0; color: #64748b; font-size: 0.9rem;">
+        <p>&copy; 2025 crazy0927. Built with passion & AI.</p>
+    </footer>
+
+    <script>
+        // Loader Fade Out
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('fade-out');
+            }, 1800); // 1.8s delay to show initial animation
+        });
+
+        // Scroll Reveal Effect
+        const sections = document.querySelectorAll('section');
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+
+</html>

@@ -167,74 +167,44 @@ section.visible {
     }
 }
 
-/* Language Switcher Dropdown */
+/* Language Switcher Button Group */
 .lang-switcher {
     position: fixed;
     top: 2rem;
     right: 2rem;
     z-index: 1000;
-}
-
-.lang-dropdown {
-    position: relative;
+    display: flex;
+    gap: 0.5rem;
     background: var(--glass);
     backdrop-filter: blur(12px);
+    padding: 0.4rem;
+    border-radius: 100px;
     border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    padding: 0.6rem 1.2rem;
-    cursor: pointer;
-    color: var(--text);
-    font-family: 'Noto Serif TC', serif;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.lang-dropdown:hover {
-    border-color: var(--primary);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.lang-dropdown-content {
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    right: 0;
-    min-width: 140px;
-    background: var(--bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    overflow: hidden;
-    display: none;
-    flex-direction: column;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(20px);
-}
-
-.lang-switcher:hover .lang-dropdown-content {
-    display: flex;
-}
-
-.lang-option {
-    padding: 0.8rem 1.2rem;
-    background: transparent;
+.lang-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
     border: none;
+    background: transparent;
     color: var(--text);
-    text-align: right;
     font-family: 'Noto Serif TC', serif;
+    font-size: 0.85rem;
     cursor: pointer;
-    transition: 0.2s;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.lang-option:hover {
+.lang-btn.active {
     background: var(--primary);
     color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
 }
 
-.lang-option.active {
-    color: var(--accent);
-    font-weight: 700;
+.lang-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 /* 多語系內容容器控制 */

@@ -15,12 +15,17 @@
 </head>
 
 <body>
-    <!-- 語言切換選單 -->
+    <!-- 語言切換下拉式選單 -->
     <nav class="lang-switcher">
-        <button class="lang-btn active" onclick="switchLang('zh')">繁中</button>
-        <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
-        <button class="lang-btn" onclick="switchLang('ru')">Русский</button>
-        <button class="lang-btn" onclick="switchLang('en')">English</button>
+        <div class="lang-dropdown">
+            <span id="current-lang-label">語系 / Language</span>
+            <div class="lang-dropdown-content">
+                <button class="lang-option active" onclick="switchLang('zh')">繁體中文</button>
+                <button class="lang-option" onclick="switchLang('en')">English</button>
+                <button class="lang-option" onclick="switchLang('ja')">日本語</button>
+                <button class="lang-option" onclick="switchLang('ru')">Русский</button>
+            </div>
+        </div>
     </nav>
 
     <!-- 開頭動畫 (Loader) -->
@@ -58,7 +63,7 @@
         <!-- About Section -->
         <section id="about" class="glass-card">
             <h2 id="about-title">
-                <span data-lang-content="zh" class="active">自己介紹</span>
+                <span data-lang-content="zh" class="active">自我介紹</span>
                 <span data-lang-content="ja">自己紹介</span>
                 <span data-lang-content="ru">Обо мне</span>
                 <span data-lang-content="en">About Me</span>
@@ -198,11 +203,14 @@
     <script>
         // Language Switching Logic
         function switchLang(lang) {
-            // Update buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('onclick').includes(`'${lang}'`)) {
-                    btn.classList.add('active');
+            // Update dropdown options
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.remove('active');
+                if (opt.getAttribute('onclick').includes(`'${lang}'`)) {
+                    opt.classList.add('active');
+                    // Update label text based on selection
+                    const labels = { 'zh': '繁體中文', 'en': 'English', 'ja': '日本語', 'ru': 'Русский' };
+                    document.getElementById('current-lang-label').innerText = labels[lang];
                 }
             });
 
